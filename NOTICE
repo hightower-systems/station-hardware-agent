@@ -1,0 +1,7 @@
+Station Hardware Agent
+Copyright 2026 Michael Hightower
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This project was extracted and generalized from local hardware-bridge
+agents running in production retail and warehouse stations.

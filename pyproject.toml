@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "station-hardware-agent"
+dynamic = ["version"]
+description = "Local HTTP agent bridging a browser/cloud app to USB retail and warehouse hardware: ESC/POS receipt printer + cash drawer, USB HID scale, and Zebra ZPL label printer."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Michael Hightower" }]
+keywords = [
+  "escpos", "zebra", "zpl", "usb-hid", "scale", "receipt-printer",
+  "cash-drawer", "hardware", "point-of-sale", "warehouse", "fastapi",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Framework :: FastAPI",
+  "Topic :: System :: Hardware",
+  "Topic :: Printing",
+]
+dependencies = [
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.27",
+  "python-escpos>=3.0",
+  "pyusb>=1.2",
+  "hidapi>=0.14",
+  "pydantic>=2.6",
+  "pydantic-settings>=2.2",
+  "pystray>=0.19",
+  "Pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx>=0.27"]
+
+[project.scripts]
+hwbridge = "hwbridge.__main__:main"
+
+[tool.hatch.version]
+path = "hwbridge/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["hwbridge"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

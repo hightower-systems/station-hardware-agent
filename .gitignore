@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Local config & secrets -- never commit these
+.env
+agent_config.json
+
+# Runtime artifacts
+logs/
+*.log
+*.zpl
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
