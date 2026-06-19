@@ -1,5 +1,9 @@
 # Station Hardware Agent
 
+[![CI](https://github.com/hightower-systems/station-hardware-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/hightower-systems/station-hardware-agent/actions/workflows/ci.yml)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
+
 A small local HTTP agent that bridges a browser or cloud web app to the
 USB hardware on a retail / warehouse station:
 

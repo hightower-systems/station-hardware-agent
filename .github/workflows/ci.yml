@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      # The device drivers (escpos/hid/pyusb/pystray) import lazily and need
+      # real hardware + system libs, so they are not required to run the test
+      # suite. Installing only the deps the tests exercise keeps CI fast and
+      # green; hardware paths are verified on the stations themselves.
+      - name: Install test dependencies
+        run: python -m pip install --upgrade pip pytest fastapi pydantic pydantic-settings httpx
+      - name: Run tests
+        run: pytest -q
