@@ -31,6 +31,12 @@ Set it to **Disabled** and restart the browser. (Leaving it at "Default"
 will start blocking once it ships on-by-default.) This is a stopgap --
 the flag goes away as LNA becomes standard.
 
+The flag is the same in Chrome and Edge:
+
+![Local Network Access Checks flag in Chrome (chrome://flags/#local-network-access-check)](img/chrome.png)
+
+![Local Network Access Checks flag in Edge (edge://flags/#local-network-access-check)](img/edge.png)
+
 ### 2. When the browser prompts (Chrome/Edge 141+)
 
 The browser shows a Local Network Access permission prompt for the site.
